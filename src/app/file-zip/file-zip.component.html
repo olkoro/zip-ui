@@ -1,0 +1,7 @@
+<p>file-zip works!</p>
+<h1>
+  files: <a href="/api/files/download" download="all.zip">download all</a>
+</h1>
+<div *ngFor="let file of files">
+  {{file}} <button (click)="download(file)">download</button>
+</div>
