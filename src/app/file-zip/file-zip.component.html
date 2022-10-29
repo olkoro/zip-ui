@@ -2,6 +2,7 @@
 <h1>
   files: <a href="/api/files/download" download="all.zip">download all</a>
 </h1>
+<app-file-upload *ngIf="showUpload" (fileChange)="onUpload($event)"></app-file-upload>
 <div *ngFor="let file of files">
   {{file}} <button (click)="download(file)">download</button>
 </div>

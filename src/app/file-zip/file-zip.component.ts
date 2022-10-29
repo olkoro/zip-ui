@@ -10,11 +10,19 @@ import {saveAs} from "file-saver";
 export class FileZipComponent implements OnInit {
 
   files: string[] = []
+  showUpload = true;
 
   constructor(private fileService: FileService) { }
 
   ngOnInit(): void {
-    this.fileService.getFiles().subscribe(res => this.files = res);
+    this.getFiles();
+  }
+
+  private getFiles() {
+    this.fileService.getFiles().subscribe(res => {
+      this.files = res;
+      this.showUpload = true;
+    });
   }
 
   download(file: string) {
@@ -34,5 +42,9 @@ export class FileZipComponent implements OnInit {
     })
   }
 
+  onUpload(file: string) {
+    this.showUpload = false;
+    this.getFiles();
+  }
 }
 

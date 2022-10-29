@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class FileService {
+  private filesUrl = '/api/files';
 
   constructor(private http: HttpClient) { }
 
@@ -19,5 +20,11 @@ export class FileService {
 
   downloadAll() {
     return this.http.get('/api/files/download', {responseType: 'blob', params: {}, observe: 'response'});
+  }
+
+  uploadFile(file: File) {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post(this.filesUrl, formData);
   }
 }
