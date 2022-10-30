@@ -1,5 +1,5 @@
 import {Component, EventEmitter, forwardRef, OnInit, Output} from '@angular/core';
-import {FileService} from "../../file.service";
+import {FileService} from "../../service/file.service";
 
 @Component({
   selector: 'app-file-upload',

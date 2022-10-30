@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HelloService} from "../hello.service";
+import {HelloService} from "../service/hello.service";
 
 @Component({
   selector: 'app-hello',

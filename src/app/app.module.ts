@@ -8,6 +8,7 @@ import {FileZipComponent} from './file-zip/file-zip.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import { FileUploadComponent } from './file-zip/file-upload/file-upload.component';
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FileUploadComponent } from './file-zip/file-upload/file-upload.componen
     AppComponent,
     HelloComponent,
     FileZipComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
