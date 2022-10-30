@@ -11,15 +11,15 @@ export class FileService {
   constructor(private http: HttpClient) { }
 
   getFiles(): Observable<string[]> {
-    return this.http.get<string[]>('/api/files')
+    return this.http.get<string[]>(this.filesUrl)
   }
 
   downloadFile(file: string) {
-    return this.http.get('/api/file', {responseType: 'blob', params: {'file': file}, observe: 'response'});
+    return this.http.get(this.filesUrl + '/' + file, {responseType: 'blob', params: {'file': file}, observe: 'response'});
   }
 
   downloadAll() {
-    return this.http.get('/api/files/download', {responseType: 'blob', params: {}, observe: 'response'});
+    return this.http.get(this.filesUrl + '/download', {responseType: 'blob', params: {}, observe: 'response'});
   }
 
   uploadFile(file: File) {
