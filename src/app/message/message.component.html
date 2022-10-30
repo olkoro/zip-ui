@@ -1,0 +1,6 @@
+<p>message works!</p>
+<div *ngFor="let message of messages">{{message.value}}</div>
+<form>
+  <input type="text" name="value" [(ngModel)]="newMessage">
+  <button type="submit" (click)="postMessage()">post</button>
+</form>
